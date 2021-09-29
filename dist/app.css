@@ -313,8 +313,7 @@ header .cta p {
   height: 100%;
   max-width: 1140px;
   opacity: 0;
-  transition: opacity 1.5s;
-  transition-delay: 0.8s;
+  transition: opacity 1s;
 }
 #lookbook .slider-bottom.get-in {
   opacity: 1;

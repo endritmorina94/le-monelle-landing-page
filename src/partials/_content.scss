@@ -116,8 +116,7 @@
         height: 100%;
         max-width: 1140px;
         opacity: 0;
-        transition: opacity 1.5s;
-        transition-delay: .8s;
+        transition: opacity 1s;
 
         &.get-in {
             opacity: 1;
