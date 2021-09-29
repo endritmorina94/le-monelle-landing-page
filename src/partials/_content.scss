@@ -1,0 +1,376 @@
+// FALL BANNER SECTION START
+.season-banners {
+
+    .season-banner-intro {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-image: url("../img/banner-1.jpg");
+        padding: 100px 0 120px;
+
+        .top-title {
+            font-family: $tertiary-font;
+            color: #FFFFFF;
+            font-size: 78px;
+            margin-bottom: 25px;
+        }
+
+        .bottom-title {
+            background-color: #FFFFFF;
+            color: $title-secondary-color;
+            font-size: 70px;
+            font-weight: 700;
+            line-height: 70px;
+            text-transform: uppercase;
+            width: max-content;
+            padding: 0 20px;
+        }
+    }
+
+    .secondary-banners {
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        .left-banner-container, .right-banner-container {
+            padding: 0 5px;
+        }
+
+        .left-banner {
+            background-image: url("../img/banner-2.jpg");
+            right: 100%;
+            transition: right 1s;
+            transition-delay: .5s;
+
+            &.get-in {
+                right: 0;
+            }
+        }
+
+        .right-banner {
+            background-image: url("../img/banner-3.jpg");
+            left: 100%;
+            transition: left 1s;
+            transition-delay: .5s;
+
+            &.get-in {
+                left: 0;
+            }
+        }
+
+        .left-banner, .right-banner {
+            height: 610px;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .banner-text {
+            margin-left: 125px;
+
+            .banner-name {
+                font-family: $secondary-font;
+                font-size: 14px;
+                font-weight: 400;
+                text-transform: uppercase;
+                margin-bottom: 40px;
+            }
+
+            .banner-title {
+                font-size: 38px;
+                font-weight: 300;
+                color: $title-secondary-color;
+
+                .bold {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+// SEASON BANNER SECTION'S END
+
+// LOOKBOOK SECTION'S START
+#lookbook {
+    padding-bottom: 130px;
+
+    .explore-season-text {
+        padding: 100px 0;
+
+        .section-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .section-slogan {
+            font-family: $tertiary-font;
+            font-size: 58px;
+            color: $bg-violet;
+            margin-bottom: 0;
+        }
+    }
+
+    //BOTTOM SLIDER
+    .slider-bottom {
+        height: 100%;
+        max-width: 1140px;
+        opacity: 0;
+        transition: opacity 1.5s;
+        transition-delay: .8s;
+
+        &.get-in {
+            opacity: 1;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .bottom-swiper-pagination {
+            margin-top: 30px;
+
+            .swiper-pagination-bullet {
+                width: 30px;
+                height: 3px;
+                margin: 0 4px;
+                border-radius: 0;
+                background-color: #000000;
+                opacity: .1;
+            }
+
+            .swiper-pagination-bullet-active {
+                opacity: .4;
+            }
+        }
+    }
+}
+// LOOKBOOK SECTION'S END
+
+// NEWSLETTER SECTION'S START
+#newsletter {
+    .nl-left {
+        opacity: 0;
+        transition: opacity 1s;
+        transition-delay: 1s;
+
+        &.get-in {
+            opacity: 1;
+        }
+    }
+
+    .nl-right {
+        opacity: 0;
+        transition: opacity 1s;
+        transition-delay: .5s;
+
+        &.get-in {
+            opacity: 1;
+        }
+    }
+}
+
+.nl-content-container {
+    width: 100%;
+    height: 100%;
+    background-color: $bg-violet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .nl-content {
+        color: #FFFFFF;
+
+        .section-name {
+            font-family: $secondary-font;
+            font-size: 40px;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-family: $secondary-font;
+            font-size: 65px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+        }
+    }
+
+    #subscribeForm {
+        position: relative;
+
+        #userEmail {
+            width: 76%;
+            margin-right: 20px;
+
+            &::placeholder {
+                color: #FFFFFF;
+                opacity: 1; /* Firefox */
+            }
+
+            &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: #FFFFFF;
+            }
+
+            &::-ms-input-placeholder { /* Microsoft Edge */
+                color: #FFFFFF;
+            }
+        }
+
+        #userEmail, #subscribeBtn {
+            background-color: darken($bg-violet, 5%);
+            color: #FFFFFF;
+            border: 0;
+            outline: 0;
+            padding: 14px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .checkbox {
+            position: absolute;
+            top: 75px;
+            left: 0;
+        }
+
+        .terms-conditions {
+            display: inline-block;
+            font-weight: 500;
+            width: 90%;
+            margin-left: 30px;
+        }
+    }
+}
+// NEWSLETTER SECTION'S END
+
+// WORK WITH US SECTION'S START
+.parallax-bg {
+    margin-top: 130px;
+    background-image: url("../img/img-parallax.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+
+    .overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #000000;
+        opacity: .4;
+        z-index: -1;
+    }
+
+    .section-title {
+        font-family: $tertiary-font;
+        font-size: 58px;
+        color: #FFFFFF;
+        margin-bottom: 0;
+    }
+}
+
+.open-positions-container {
+    padding: 0 160px;
+
+}
+.open-positions {
+    margin-top: -80px;
+    background-color: white;
+    padding: 0 30px;
+
+    .section-title {
+        font-size: 25px;
+        font-weight: 700;
+        color: $title-secondary-color;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 60px 0;
+    }
+
+    .accordion {
+        margin-bottom: 130px;
+
+        .accordion-item {
+            border: 1px solid #FAEBF0;
+            margin-bottom: 20px;
+        }
+
+        .accordion-button {
+            font-family: $secondary-font;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            background-color: #FAEBF0;
+            border: 0;
+            color: #000000;
+            padding: 26px 30px 24px;
+
+            &:focus {
+                box-shadow: 0 0 0 0;
+            }
+        }
+
+        .accordion-body {
+            padding: 40px;
+
+            p {
+                font-size: 14px;
+                font-weight: 400;
+                color: lighten($title-color, 20%);
+            }
+
+            .bold {
+                font-weight: 600;
+                color: $title-color;
+            }
+
+            .default-msg {
+                margin-top: 35px;
+
+                span {
+                    color: $title-color;
+                }
+            }
+
+            .cta-btn {
+                display: inline-block;
+                margin-top: 15px;
+            }
+        }
+    }
+}
+// WORK WITH US SECTION'S END

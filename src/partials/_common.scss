@@ -1,0 +1,83 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: $primary-font;
+    font-size: $standard-size;
+    color: $title-color;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+
+    li {
+        display: inline-block;
+    }
+}
+
+// Call To Action Button
+.cta-btn {
+    font-size: 14px;
+    font-family: $secondary-font;
+    font-weight: 500;
+    padding: 15px 35px;
+    background-color: $bg-btn;
+    color: #FFFFFF;
+    border: 2px solid $bg-btn;
+    transition: all .4s;
+
+    &:hover {
+        background-color: transparent;
+        color: $bg-btn;
+    }
+}
+
+// Scroll To Top Arrow
+.scroll-top-arrow {
+    font-family: $secondary-font;
+    font-size: 11px;
+    font-weight: 500;
+    color: lighten($title-color, 30%);
+    opacity: .8;
+    position: fixed;
+    bottom: 10%;
+    right: 15px;
+    transform: rotate(-90deg);
+    z-index: 1;
+    transition: opacity .4s, color .4s;
+
+    &.hide {
+        opacity: 0;
+    }
+
+    i {
+        position: relative;
+        left: 5px;
+        transition: left .8s;
+    }
+
+    &:hover i {
+        left: 10px;
+    }
+
+    &:hover {
+        color: $title-secondary-color;
+    }
+}
