@@ -13,7 +13,7 @@ footer {
         }
 
         .logo {
-            max-width: 300px;
+            width: 300px;
 
             img {
                 filter: invert(1);
@@ -98,6 +98,61 @@ footer {
 
             &:hover {
                 color: lighten($footer-font-color, 20%);
+            }
+        }
+    }
+
+    .put-at-side {
+        display: flex;
+        justify-content: flex-end;
+        padding-left: 0;
+    }
+}
+
+
+
+
+// ---------- RESPONSIVE SECTION ----------
+// Tablet
+@media all and (max-width: 991px){
+    footer {
+        .footer-top {
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+
+            .logo {
+                padding-left: 23px;
+            }
+
+            .footer-top-links {
+                margin-top: 30px;
+            }
+        }
+
+        .footer-bottom .footer-bottom-links {
+            text-align: center;
+        }
+
+        .put-at-side {
+            justify-content: center;
+        }
+    }
+}
+
+// Mobile
+@media all and (max-width: 767px){
+    footer {
+        .footer-top {
+            .logo {
+                width: 100%;
+                text-align: center;
+                padding-left: 0;
+                margin-bottom: 20px;
+
+                img {
+                    width: 300px;
+                    display: inline-block;
+                }
             }
         }
     }

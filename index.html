@@ -36,7 +36,19 @@
             <div class="container text-center">
                 <!-- Navigator's Start -->
                 <nav class="row top-nav" :class="{'hide-nav' : scrollingDown, 'fixed-nav' : scrollingUp}">
-                    <div class="col-lg-4">
+
+                    <!-- Burger Menu Start -->
+                    <div class="col-3 col-sm-4 d-lg-none">
+                        <input type="checkbox" id="menu_checkbox">
+                        <label for="menu_checkbox">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </label>
+                    </div>
+                    <!-- Burger Menu End -->
+
+                    <div class="d-none d-lg-block col-lg-4">
                         <ul class="menu justify-content-end">
                             <li>
                                 <a :class="{'active' : lookbook}" href="#lookbook">LOOKBOOK</a>
@@ -46,15 +58,15 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="logo">
+                    <div class="col-6 col-sm-4">
+                        <div class="logo text-center">
                             <a href="#">
                                 <img :src="logoImg" alt="logo-le-monelle">
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <ul class="menu justify-content-start">
+                    <div class="col-3 col-sm-4">
+                        <ul class="d-none d-lg-block menu justify-content-start">
                             <li>
                                 <a class="" href="#">PUNTI VENDITA</a>
                             </li>
@@ -92,7 +104,7 @@
             <!-- Top Sliders's End -->
 
             <!-- Call-to-Action's Start -->
-            <div class="container cta text-center">
+            <div class="container-fluid cta text-center">
                 <h3 class="cta-title">
                     Vivi la moda a colori ed esprimi ogni sfumatura del tuo carattere!
                 </h3>
@@ -119,7 +131,7 @@
             </div>
             <div class="container-fluid secondary-banners">
                 <div class="row">
-                    <div class="col-lg-6 left-banner-container">
+                    <div class="col-12 col-lg-6 left-banner-container">
                         <div class="left-banner" :class="{'get-in' : sideBanners}">
                             <div class="banner-text">
                                 <h5 class="banner-name">
@@ -133,7 +145,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 right-banner-container">
+                    <div class="col-12 col-lg-6 right-banner-container">
                         <div class="right-banner" :class="{'get-in' : sideBanners}">
                             <div class="banner-text">
                                 <h5 class="banner-name">
@@ -154,7 +166,7 @@
 
         <!-- Lookbook Section's Start -->
         <section id="lookbook">
-            <div class="container text-center">
+            <div class="container-fluid text-center">
                 <div class="explore-season-text">
                     <h5 class="section-title">
                         ESPLORA IL LOOKBOOK
@@ -182,7 +194,7 @@
         <section id="newsletter">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-6 p-0 nl-left" :class="{'get-in' : newsLetterAnimation}">
+                    <div class="col-12 col-lg-6 p-0 nl-left" :class="{'get-in' : newsLetterAnimation}">
                         <div class="nl-content-container">
                             <div class="nl-content">
                                 <h3 class="section-name">
@@ -209,7 +221,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 p-0 nl-right" :class="{'get-in' : newsLetterAnimation}">
+                    <div class="col-12 col-lg-6 p-0 nl-right" :class="{'get-in' : newsLetterAnimation}">
                         <img :src="newsletterImg" alt="newsletter">
                     </div>
                 </div>
@@ -226,7 +238,7 @@
                 </h3>
             </div>
 
-            <div class="container open-positions-container">
+            <div class="container-fluid open-positions-container">
                 <div class="open-positions">
                     <h4 class="section-title">
                         POSIZIONI APERTE
@@ -277,13 +289,13 @@
         <footer>
             <div class="container">
                 <div class="row footer-top">
-                    <div class="col-lg-6">
+                    <div class="col-12 col-lg-6">
                         <div class="logo">
                             <img :src="logoImg" alt="logo">
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <ul class="footer-top-links d-flex justify-content-end">
+                    <div class="col-12 col-lg-6">
+                        <ul class="footer-top-links put-at-side">
                             <li>
                                 <a href="#">
                                     <i class="fab fa-facebook-f"></i>
@@ -300,7 +312,7 @@
                     </div>
                 </div>
                 <div class="row footer-bottom">
-                    <div class="col-lg-6">
+                    <div class="col-12 col-lg-6">
                         <ul class="footer-bottom-links">
                             <li>
                                 <a href="#">
@@ -314,7 +326,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-6 d-flex justify-content-end">
+                    <div class="col-12 col-lg-6 put-at-side">
                         <a href="#">
                             Credits
                         </a>
@@ -323,10 +335,13 @@
             </div>
         </footer>
         <!-- Footer's End -->
-        <a class="scroll-top-arrow" :class="{'hide' : pageStart}" href="#root">
+
+        <!-- Scroll to Top Arrow -->
+        <a class="d-none d-lg-block scroll-top-arrow" :class="{'hide' : pageStart}" href="#root">
 			SCROLL UP
 			<i class="fas fa-arrow-right"></i>
 		</a>
+
     </div>
     <!-- Vue's Root End -->
 

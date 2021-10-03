@@ -128,7 +128,7 @@ var app = new Vue({
     }); // Bottom Slider
 
     var swiper2 = new Swiper(".slider-bottom", {
-      slidesPerView: 3,
+      slidesPerView: 1,
       direction: 'horizontal',
       loop: true,
       autoplay: {
@@ -139,6 +139,18 @@ var app = new Vue({
       pagination: {
         el: ".bottom-swiper-pagination",
         clickable: true
+      },
+      breakpoints: {
+        // when window width is <= 768px
+        991: {
+          slidesPerView: 3,
+          spaceBetweenSlides: 10
+        },
+        // when window width is <= 991px
+        768: {
+          slidesPerView: 2,
+          spaceBetweenSlides: 10
+        }
       }
     });
   }

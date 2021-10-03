@@ -28,6 +28,61 @@ header {
             background-color: white;
         }
 
+
+        #menu_checkbox {
+            display: none;
+        }
+
+        label {
+            display: block;
+            width: 16px;
+            height: 14px;
+            cursor: pointer;
+            position: relative;
+            bottom: 2px;
+
+            div {
+                position: relative;
+                top: 0;
+                height: 2.5px;
+                background-color: #000000;
+                margin-bottom: 2.5px;
+                transition: 0.3s ease transform, 0.3s ease top, 0.3s ease width, 0.3s ease right;
+                border-radius: 2px;
+
+                &:first-child {
+                    transform-origin: 0;
+                }
+
+                &:nth-child(2) {
+                    right: 0;
+                    width: 16px;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                    transform-origin: 3px;
+                }
+            }
+        }
+
+        #menu_checkbox:checked + label div:first-child {
+            top: -2px;
+            transform: rotateZ(45deg);
+        }
+
+        #menu_checkbox:checked + label div:last-child {
+            top: -9px;
+            transform: rotateZ(45deg);
+        }
+
+        #menu_checkbox:checked + label div:nth-child(2) {
+            width: 18px;
+            top: -1px;
+            right: 3.5px;
+            transform: rotateZ(-45deg);
+        }
+
         .menu {
             width: 100%;
             padding: 0;
@@ -86,7 +141,6 @@ header {
 
             img {
             width: 200px;
-            margin: 0 60px;
             }
         }
     }
@@ -167,7 +221,7 @@ header {
 
     .cta {
         padding: 120px 0 150px;
-        width: 38%;
+        width: 50%;
 
         .cta-title {
             font-family: $tertiary-font;
@@ -178,6 +232,100 @@ header {
             color: $paragraph-color;
             font-weight: 400;
             margin: 40px 0 60px;
+        }
+    }
+}
+
+
+// ---------- RESPONSIVE SECTION ----------
+// Tablet
+@media all and (max-width: 991px){
+    // Header
+    header {
+        .container {
+           .jumbotron {
+               padding-top: 160px;
+
+               h1 {
+                    font-size: 58px;
+                    line-height: 58px;
+
+                    .transparent-text {
+                        font-size: 60px;
+                    }
+                }
+
+                h2 {
+                    font-size: 33px;
+                    margin: 10px 0 100px;
+
+                    .numbers {
+                        font-size: 45px;
+                    }
+                }
+            }
+        }
+
+        //Top Slider
+        .slider-top {
+            .swiper-slide {
+                height: 520px;
+            }
+        }
+
+        //Call to Action Section
+        .cta {
+            width: 61%;
+        }
+    }
+}
+
+// Tablet
+@media all and (max-width: 767px){
+    // Header
+    header {
+        //Top Slider
+        .slider-top {
+            .swiper-slide {
+                height: 480px;
+            }
+        }
+
+        //Call to Action Section
+        .cta {
+            width: 93%;
+        }
+    }
+}
+
+// XS Mobile
+@media all and (max-width: 575px){
+    // Header
+    header {
+        nav.top-nav .logo a img {
+            width: 100%;
+        }
+    
+        .container {
+           .jumbotron {
+               h1 {
+                    font-size: 34px;
+                    line-height: 34px;
+
+                    .transparent-text {
+                        font-size: 36px;
+                    }
+                }
+
+                h2 {
+                    font-size: 25px;
+                    margin: 10px 0 100px;
+
+                    .numbers {
+                        font-size: 30px;
+                    }
+                }
+            }
         }
     }
 }

@@ -101,6 +101,51 @@ header nav.top-nav.fixed-nav {
   top: 0;
   background-color: white;
 }
+header nav.top-nav #menu_checkbox {
+  display: none;
+}
+header nav.top-nav label {
+  display: block;
+  width: 16px;
+  height: 14px;
+  cursor: pointer;
+  position: relative;
+  bottom: 2px;
+}
+header nav.top-nav label div {
+  position: relative;
+  top: 0;
+  height: 2.5px;
+  background-color: #000000;
+  margin-bottom: 2.5px;
+  transition: 0.3s ease transform, 0.3s ease top, 0.3s ease width, 0.3s ease right;
+  border-radius: 2px;
+}
+header nav.top-nav label div:first-child {
+  transform-origin: 0;
+}
+header nav.top-nav label div:nth-child(2) {
+  right: 0;
+  width: 16px;
+}
+header nav.top-nav label div:last-child {
+  margin-bottom: 0;
+  transform-origin: 3px;
+}
+header nav.top-nav #menu_checkbox:checked + label div:first-child {
+  top: -2px;
+  transform: rotateZ(45deg);
+}
+header nav.top-nav #menu_checkbox:checked + label div:last-child {
+  top: -9px;
+  transform: rotateZ(45deg);
+}
+header nav.top-nav #menu_checkbox:checked + label div:nth-child(2) {
+  width: 18px;
+  top: -1px;
+  right: 3.5px;
+  transform: rotateZ(-45deg);
+}
 header nav.top-nav .menu {
   width: 100%;
   padding: 0;
@@ -144,7 +189,6 @@ header nav.top-nav .logo a {
 }
 header nav.top-nav .logo a img {
   width: 200px;
-  margin: 0 60px;
 }
 header .container .jumbotron {
   padding-top: 150px;
@@ -204,7 +248,7 @@ header .slider-top .swiper-slide-active {
 }
 header .cta {
   padding: 120px 0 150px;
-  width: 38%;
+  width: 50%;
 }
 header .cta .cta-title {
   font-family: "Cormorant Garamond", serif;
@@ -216,6 +260,58 @@ header .cta p {
   margin: 40px 0 60px;
 }
 
+@media all and (max-width: 991px) {
+  header .container .jumbotron {
+    padding-top: 160px;
+  }
+  header .container .jumbotron h1 {
+    font-size: 58px;
+    line-height: 58px;
+  }
+  header .container .jumbotron h1 .transparent-text {
+    font-size: 60px;
+  }
+  header .container .jumbotron h2 {
+    font-size: 33px;
+    margin: 10px 0 100px;
+  }
+  header .container .jumbotron h2 .numbers {
+    font-size: 45px;
+  }
+  header .slider-top .swiper-slide {
+    height: 520px;
+  }
+  header .cta {
+    width: 61%;
+  }
+}
+@media all and (max-width: 767px) {
+  header .slider-top .swiper-slide {
+    height: 480px;
+  }
+  header .cta {
+    width: 93%;
+  }
+}
+@media all and (max-width: 575px) {
+  header nav.top-nav .logo a img {
+    width: 100%;
+  }
+  header .container .jumbotron h1 {
+    font-size: 34px;
+    line-height: 34px;
+  }
+  header .container .jumbotron h1 .transparent-text {
+    font-size: 36px;
+  }
+  header .container .jumbotron h2 {
+    font-size: 25px;
+    margin: 10px 0 100px;
+  }
+  header .container .jumbotron h2 .numbers {
+    font-size: 30px;
+  }
+}
 .season-banners .season-banner-intro {
   display: flex;
   align-items: center;
@@ -267,7 +363,7 @@ header .cta p {
   left: 0;
 }
 .season-banners .secondary-banners .left-banner, .season-banners .secondary-banners .right-banner {
-  height: 610px;
+  height: 528px;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -381,7 +477,6 @@ header .cta p {
   font-family: "Poppins", sans-serif;
   font-size: 40px;
   font-weight: 300;
-  text-transform: uppercase;
 }
 .nl-content-container .nl-content .section-title {
   font-family: "Poppins", sans-serif;
@@ -463,8 +558,8 @@ header .cta p {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #000000;
-  opacity: 0.4;
+  background-color: #232323;
+  opacity: 0.6;
   z-index: -1;
 }
 .parallax-bg .section-title {
@@ -475,7 +570,7 @@ header .cta p {
 }
 
 .open-positions-container {
-  padding: 0 160px;
+  padding: 0 8%;
 }
 
 .open-positions {
@@ -488,7 +583,6 @@ header .cta p {
   font-weight: 700;
   color: #F95E5E;
   text-align: center;
-  text-transform: uppercase;
   padding: 60px 0;
 }
 .open-positions .accordion {
@@ -534,6 +628,110 @@ header .cta p {
   margin-top: 15px;
 }
 
+@media all and (max-width: 991px) {
+  .season-banners .secondary-banners .left-banner, .season-banners .secondary-banners .right-banner {
+    margin-top: 10px;
+  }
+
+  .nl-content-container {
+    padding: 92px 107px;
+  }
+  .nl-content-container .nl-content .section-name {
+    font-size: 20px;
+  }
+  .nl-content-container .nl-content .subtitle {
+    margin-bottom: 30px;
+  }
+  .nl-content-container #subscribeForm .terms-conditions {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .parallax-bg {
+    background-attachment: scroll;
+  }
+
+  .open-positions {
+    margin-top: -50px;
+  }
+}
+@media all and (max-width: 767px) {
+  .season-banners .secondary-banners .left-banner, .season-banners .secondary-banners .right-banner,
+.season-banners .secondary-banners .left-banner, .season-banners .secondary-banners .left-banner {
+    height: 350px;
+  }
+
+  .season-banners .secondary-banners .banner-text {
+    margin-left: 15px;
+  }
+
+  #lookbook .explore-season-text {
+    padding: 60px 0;
+  }
+
+  .nl-content-container {
+    padding: 76px 80px;
+  }
+  .nl-content-container .nl-content {
+    width: 100%;
+  }
+  .nl-content-container .nl-content .section-title {
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  .nl-content-container .nl-content .section-name {
+    font-size: 20px;
+  }
+  .nl-content-container .nl-content .subtitle {
+    margin-bottom: 30px;
+  }
+  .nl-content-container #subscribeForm .terms-conditions {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  #newsletter .nl-right {
+    height: 350px;
+  }
+  #newsletter .nl-right img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+
+  .parallax-bg {
+    background-attachment: scroll;
+    height: 350px;
+  }
+
+  .open-positions-container {
+    padding: 0 15px;
+  }
+  .open-positions-container .open-positions {
+    margin-top: 0;
+  }
+  .open-positions-container .open-positions .accordion {
+    margin-bottom: 70px;
+  }
+}
+@media all and (max-width: 575px) {
+  .season-banners .season-banner-intro .top-title {
+    text-align: center;
+    font-size: 65px;
+  }
+  .season-banners .season-banner-intro .bottom-title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nl-content-container {
+    padding: 80px 32px;
+  }
+  .nl-content-container #subscribeForm #userEmail {
+    width: 64%;
+  }
+}
 footer {
   background-color: #343434;
   color: #808080;
@@ -548,7 +746,7 @@ footer .footer-top > div {
   padding: 0;
 }
 footer .footer-top .logo {
-  max-width: 300px;
+  width: 300px;
 }
 footer .footer-top .logo img {
   filter: invert(1);
@@ -614,4 +812,40 @@ footer .footer-bottom a {
 }
 footer .footer-bottom a:hover {
   color: #b3b3b3;
+}
+footer .put-at-side {
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 0;
+}
+
+@media all and (max-width: 991px) {
+  footer .footer-top {
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+  }
+  footer .footer-top .logo {
+    padding-left: 23px;
+  }
+  footer .footer-top .footer-top-links {
+    margin-top: 30px;
+  }
+  footer .footer-bottom .footer-bottom-links {
+    text-align: center;
+  }
+  footer .put-at-side {
+    justify-content: center;
+  }
+}
+@media all and (max-width: 767px) {
+  footer .footer-top .logo {
+    width: 100%;
+    text-align: center;
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+  footer .footer-top .logo img {
+    width: 300px;
+    display: inline-block;
+  }
 }

@@ -58,7 +58,7 @@
         }
 
         .left-banner, .right-banner {
-            height: 610px;
+            height: 528px;
             background-size: cover;
             display: flex;
             align-items: center;
@@ -206,7 +206,6 @@
             font-family: $secondary-font;
             font-size: 40px;
             font-weight: 300;
-            text-transform: uppercase;
         }
 
         .section-title {
@@ -289,8 +288,8 @@
         position: absolute;
         top: 0;
         left: 0;
-        background-color: #000000;
-        opacity: .4;
+        background-color: #232323;
+        opacity: .6;
         z-index: -1;
     }
 
@@ -303,9 +302,9 @@
 }
 
 .open-positions-container {
-    padding: 0 160px;
-
+    padding: 0 8%;
 }
+
 .open-positions {
     margin-top: -80px;
     background-color: white;
@@ -316,7 +315,6 @@
         font-weight: 700;
         color: $title-secondary-color;
         text-align: center;
-        text-transform: uppercase;
         padding: 60px 0;
     }
 
@@ -373,3 +371,141 @@
     }
 }
 // WORK WITH US SECTION'S END
+
+
+// ---------- RESPONSIVE SECTION ----------
+// Tablet
+@media all and (max-width: 991px){
+    // Season Banner Section
+    .season-banners .secondary-banners .left-banner, .season-banners .secondary-banners .right-banner {
+	    margin-top: 10px;
+    }
+
+    // Newsletter Section
+    .nl-content-container {
+        padding: 92px 107px;
+
+        .nl-content {
+
+            .section-name {
+                font-size: 20px;
+            }
+
+            .subtitle {
+                margin-bottom: 30px;
+            }
+        }
+
+        #subscribeForm .terms-conditions {
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+
+    // Work With Us Section
+    .parallax-bg {
+        background-attachment: scroll;
+    }
+
+    .open-positions {
+        margin-top: -50px;
+    }
+}
+
+// Mobile
+@media all and (max-width: 767px){
+    // Season Banner Section
+    // Season Banner Section
+    .season-banners .secondary-banners .left-banner, .season-banners .secondary-banners .right-banner,
+    .season-banners .secondary-banners .left-banner, .season-banners .secondary-banners .left-banner {
+	    height: 350px;
+    }
+    .season-banners .secondary-banners .banner-text {
+    margin-left: 15px;
+    }
+
+    // Lookbook Section
+    #lookbook .explore-season-text {
+        padding: 60px 0;
+    }
+
+    // Newsletter Section
+    .nl-content-container {
+        padding: 76px 80px;
+
+        .nl-content {
+            width: 100%;
+
+            .section-title {
+                font-size: 40px;
+                margin-top: 20px;
+                margin-bottom: 30px;
+            }
+
+            .section-name {
+                font-size: 20px;
+            }
+
+            .subtitle {
+                margin-bottom: 30px;
+            }
+        }
+
+        #subscribeForm .terms-conditions {
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+
+    #newsletter .nl-right {
+        height: 350px;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    // Work With Us Section
+    .parallax-bg {
+        background-attachment: scroll;
+        height: 350px;
+    }
+
+    .open-positions-container {
+        padding: 0 15px;
+
+        .open-positions {
+            margin-top: 0;
+
+            .accordion {
+                margin-bottom: 70px;
+            }
+        }
+    }
+}
+
+// XS Mobile
+@media all and (max-width: 575px){
+    // Season Banner Section
+    .season-banners .season-banner-intro {
+        .top-title {
+            text-align: center;
+            font-size: 65px;
+        }
+
+        .bottom-title {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    
+    // Newsletter Section
+    .nl-content-container {
+        padding: 80px 32px;
+
+        #subscribeForm #userEmail {
+            width: 64%;
+        }
+    }
+}
