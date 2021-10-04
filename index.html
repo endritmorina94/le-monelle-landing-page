@@ -40,7 +40,7 @@
                     <!-- Burger Menu Start -->
                     <div class="col-3 col-sm-4 d-lg-none">
                         <input type="checkbox" id="menu_checkbox">
-                        <label for="menu_checkbox">
+                        <label v-on:click="toggleDropdown()" for="menu_checkbox">
                             <div></div>
                             <div></div>
                             <div></div>
@@ -75,8 +75,30 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="col-12 d-lg-none p-0">
+                        <!-- Dropdown Start -->
+                        <div class="dropdown-container" :class="{'active' : dropdownActive}">
+                            <ul class="dropdown-menu-p">
+                                <li>
+                                    <a href="#lookbook">LOOKBOOK</a>
+                                </li>
+                                <li>
+                                    <a href="#newsletter">SHOP ONLINE</a>
+                                </li>
+                                <li>
+                                    <a href="#">PUNTI VENDITA</a>
+                                </li>
+                                <li>
+                                    <a href="#work-with-us">LAVORA CON NOI</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Dropdown End -->
+                    </div>
                 </nav>
                 <!-- Navigator's End -->
+
+
 
                 <!-- Jumbotron's Start -->
                 <div class="jumbotron">
@@ -129,10 +151,10 @@
                     NUOVE STAMPE
                 </h2>
             </div>
-            <div class="container-fluid secondary-banners">
+            <div id="season-secondary-banners" class="container-fluid secondary-banners">
                 <div class="row">
                     <div class="col-12 col-lg-6 left-banner-container">
-                        <div class="left-banner" :class="{'get-in' : sideBanners}">
+                        <div class="left-banner" :class="{'get-in' : sideBannersAnimation}">
                             <div class="banner-text">
                                 <h5 class="banner-name">
                                     NEW STYLES
@@ -146,7 +168,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-lg-6 right-banner-container">
-                        <div class="right-banner" :class="{'get-in' : sideBanners}">
+                        <div class="right-banner" :class="{'get-in' : sideBannersAnimation}">
                             <div class="banner-text">
                                 <h5 class="banner-name">
                                     MUST HAVE
@@ -177,7 +199,7 @@
                 </div>
 
                 <!-- Bottom Slider's Start -->
-                <div class="swiper slider-bottom" :class="{'get-in' : bottomSlider}">
+                <div id="second-slider" class="swiper slider-bottom" :class="{'get-in' : bottomSliderAnimation}">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" v-for="img in bottomSliderImgs">
                             <img :src="img" alt="slider-img">

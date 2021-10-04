@@ -92,7 +92,7 @@ header nav.top-nav {
   width: 100%;
   transition: all 1.2s;
   transition-delay: 0.2s;
-  z-index: 2;
+  z-index: 3;
 }
 header nav.top-nav.hide-nav {
   top: -100%;
@@ -261,6 +261,43 @@ header .cta p {
 }
 
 @media all and (max-width: 991px) {
+  header .dropdown-container {
+    display: block;
+    position: relative;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    background-color: #171717;
+    z-index: 2;
+    height: 0;
+    overflow-y: hidden;
+    transition: height 0.3s;
+  }
+  header .dropdown-container.active {
+    height: 216px;
+  }
+  header .dropdown-container .dropdown-menu-p {
+    width: 100%;
+    padding-left: 0;
+    margin: 0;
+  }
+  header .dropdown-container .dropdown-menu-p li {
+    display: block;
+    text-align: left;
+    padding: 14px 15px 15px;
+  }
+  header .dropdown-container .dropdown-menu-p li:not(last-child) {
+    border-bottom: 1px solid #252525;
+  }
+  header .dropdown-container .dropdown-menu-p li a {
+    color: #FFFFFF;
+    transition: 0.4s color;
+    cursor: pointer;
+  }
+  header .dropdown-container .dropdown-menu-p li a:hover {
+    color: #F95E5E;
+  }
   header .container .jumbotron {
     padding-top: 160px;
   }
@@ -685,6 +722,9 @@ header .cta p {
   }
   .nl-content-container .nl-content .subtitle {
     margin-bottom: 30px;
+  }
+  .nl-content-container #subscribeForm #userEmail {
+    width: 73%;
   }
   .nl-content-container #subscribeForm .terms-conditions {
     font-size: 14px;

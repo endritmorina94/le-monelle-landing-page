@@ -451,6 +451,10 @@
             }
         }
 
+        #subscribeForm #userEmail {
+            width: 73%;
+        }
+
         #subscribeForm .terms-conditions {
             font-size: 14px;
             text-align: center;
@@ -499,7 +503,7 @@
             text-align: center;
         }
     }
-    
+
     // Newsletter Section
     .nl-content-container {
         padding: 80px 32px;

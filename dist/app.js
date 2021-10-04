@@ -54,9 +54,15 @@ var app = new Vue({
     newsLetter: false,
     workWithUs: false,
     // Flags for animations on scrolling
-    sideBanners: false,
-    bottomSlider: false,
-    newsLetterAnimation: false
+    sideBannersAnimation: false,
+    bottomSliderAnimation: false,
+    newsLetterAnimation: false,
+    // Offset of elements that will activate the animations
+    newsLetterOffset: 0,
+    secondaryBanners: 0,
+    bottomSliderOffset: 0,
+    // Flag for Dropdown Menu
+    dropdownActive: false
   },
   methods: {
     // Detecting scroll up or down or page start
@@ -64,7 +70,10 @@ var app = new Vue({
       if (this.lastKnownPosition < window.scrollY) {
         this.scrollingDown = true;
         this.scrollingUp = false;
-        this.pageStart = false;
+        this.pageStart = false; // In case of scrolling down, set the flag as false, also uncheck the Burger's menu checkbox
+
+        this.dropdownActive = false;
+        document.getElementById("menu_checkbox").checked = false;
       } else {
         this.scrollingDown = false;
         this.scrollingUp = true;
@@ -87,20 +96,36 @@ var app = new Vue({
         this.lookbook = true;
       }
     },
+    // Setting the offset of the elements
+    snapshotOfElementsOffset: function snapshotOfElementsOffset() {
+      var vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+      var newsletter = document.getElementById("newsletter");
+      this.newsLetterOffset = newsletter.offsetTop - vh;
+      var bottomSlider = document.getElementById("second-slider");
+      this.bottomSliderOffset = bottomSlider.offsetTop - vh;
+      var seasonBanners = document.getElementById("season-secondary-banners");
+      this.secondaryBannersOffset = seasonBanners.offsetTop - vh;
+    },
     // Detecting page section in order to start relative animation
     changeAnimationFlags: function changeAnimationFlags() {
-      if (this.lastKnownPosition > 2900) {
+      if (this.lastKnownPosition > this.newsLetterOffset) {
         this.newsLetterAnimation = true;
-      } else if (this.lastKnownPosition > 2300) {
-        this.bottomSlider = true;
-      } else if (this.lastKnownPosition > 1400) {
-        this.sideBanners = true;
+      } else if (this.lastKnownPosition > this.bottomSliderOffset) {
+        this.bottomSliderAnimation = true;
+      } else if (this.lastKnownPosition > this.secondaryBannersOffset) {
+        this.sideBannersAnimation = true;
       }
+    },
+    toggleDropdown: function toggleDropdown() {
+      this.dropdownActive ? this.dropdownActive = false : this.dropdownActive = true;
     }
   },
   mounted: function mounted() {
     var _this = this;
 
+    this.$nextTick(function () {
+      this.snapshotOfElementsOffset();
+    });
     document.addEventListener('scroll', function (e) {
       _this.changeFlags();
 

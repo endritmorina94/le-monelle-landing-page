@@ -67,9 +67,15 @@ var app = new Vue(
             newsLetter: false,
             workWithUs: false,
             // Flags for animations on scrolling
-            sideBanners: false,
-            bottomSlider: false,
-            newsLetterAnimation: false
+            sideBannersAnimation: false,
+            bottomSliderAnimation: false,
+            newsLetterAnimation: false,
+            // Offset of elements that will activate the animations
+            newsLetterOffset: 0,
+            secondaryBanners: 0,
+            bottomSliderOffset: 0,
+            // Flag for Dropdown Menu
+            dropdownActive: false
         },
         methods: {
             // Detecting scroll up or down or page start
@@ -78,6 +84,9 @@ var app = new Vue(
                     this.scrollingDown = true;
                     this.scrollingUp = false;
                     this.pageStart = false;
+                    // In case of scrolling down, set the flag as false, also uncheck the Burger's menu checkbox
+                    this.dropdownActive = false;
+                    document.getElementById("menu_checkbox").checked = false;
                 } else {
                     this.scrollingDown = false;
                     this.scrollingUp = true;
@@ -103,19 +112,40 @@ var app = new Vue(
                 }
             },
 
+            // Setting the offset of the elements
+            snapshotOfElementsOffset() {
+                const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+
+                let newsletter = document.getElementById("newsletter");
+                this.newsLetterOffset = newsletter.offsetTop - vh;
+
+                let bottomSlider = document.getElementById("second-slider");
+                this.bottomSliderOffset = bottomSlider.offsetTop - vh;
+
+                let seasonBanners = document.getElementById("season-secondary-banners");
+                this.secondaryBannersOffset = seasonBanners.offsetTop - vh;
+            },
+
             // Detecting page section in order to start relative animation
             changeAnimationFlags() {
-                if (this.lastKnownPosition > 2900) {
+                if (this.lastKnownPosition > this.newsLetterOffset) {
                     this.newsLetterAnimation = true;
-                } else if (this.lastKnownPosition > 2300) {
-                    this.bottomSlider = true;
-                } else if (this.lastKnownPosition > 1400) {
-                    this.sideBanners = true;
+                } else if (this.lastKnownPosition > this.bottomSliderOffset) {
+                    this.bottomSliderAnimation = true;
+                } else if (this.lastKnownPosition > this.secondaryBannersOffset) {
+                    this.sideBannersAnimation = true;
                 }
-            }
+            },
 
+            toggleDropdown() {
+                this.dropdownActive ? this.dropdownActive = false : this.dropdownActive = true;
+            }
         },
         mounted() {
+            this.$nextTick(function () {
+                this.snapshotOfElementsOffset();
+            });
+
             document.addEventListener('scroll', (e) => {
                 this.changeFlags();
                 this.changeActiveLinks();

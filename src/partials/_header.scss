@@ -17,7 +17,7 @@ header {
         width: 100%;
         transition: all 1.2s;
         transition-delay: .2s;
-        z-index: 2;
+        z-index: 3;
 
         &.hide-nav {
             top: -100%;
@@ -242,6 +242,52 @@ header {
 @media all and (max-width: 991px){
     // Header
     header {
+        // Dropdown Menu Start
+        .dropdown-container {
+            display: block;
+            position: relative;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            padding: 0;
+            background-color: #171717;
+            z-index: 2;
+            height: 0;
+            overflow-y: hidden;
+            transition: height .3s;
+
+            &.active {
+                height: 216px;
+            }
+
+            .dropdown-menu-p {
+                width: 100%;
+                padding-left: 0;
+                margin: 0;
+
+                li {
+                    display: block;
+                    text-align: left;
+                    padding: 14px 15px 15px;
+
+                    &:not(last-child) {
+                        border-bottom: 1px solid #252525;
+                    }
+
+                    a {
+                        color: #FFFFFF;
+                        transition: .4s color;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $title-secondary-color;
+                        }
+                    }
+                }
+            }
+        }
+        // Dropdown Menu End
+
         .container {
            .jumbotron {
                padding-top: 160px;
@@ -305,7 +351,7 @@ header {
         nav.top-nav .logo a img {
             width: 100%;
         }
-    
+
         .container {
            .jumbotron {
                h1 {
