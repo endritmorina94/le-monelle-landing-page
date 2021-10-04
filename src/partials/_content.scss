@@ -339,6 +339,24 @@
             &:focus {
                 box-shadow: 0 0 0 0;
             }
+
+            &::after {
+                font-family:"Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f067";
+                background-image: none;
+                transform: none;
+                transition: none;
+                color: $title-secondary-color;
+            }
+
+            &:not(.collapsed)::after {
+                font-family:"Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f068";
+                background-image: none;
+                transform: none;
+            }
         }
 
         .accordion-body {

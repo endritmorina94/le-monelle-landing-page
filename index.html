@@ -269,7 +269,7 @@
                     <div class="accordion" id="myAccordion">
                         <div class="accordion-item" v-for="(job, index) in jobOffers">
                             <h2 class="accordion-header" :id="'heading' + index">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse' + index" aria-expanded="true" :aria-controls="'collapse' + index">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse' + index" aria-expanded="true" :aria-controls="'collapse' + index">
                                     {{ job.title }} - {{ job.place }}
                                 </button>
                             </h2>

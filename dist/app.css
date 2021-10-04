@@ -642,6 +642,22 @@ header .cta p {
 .open-positions .accordion .accordion-button:focus {
   box-shadow: 0 0 0 0;
 }
+.open-positions .accordion .accordion-button::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f067";
+  background-image: none;
+  transform: none;
+  transition: none;
+  color: #F95E5E;
+}
+.open-positions .accordion .accordion-button:not(.collapsed)::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f068";
+  background-image: none;
+  transform: none;
+}
 .open-positions .accordion .accordion-body {
   padding: 40px;
 }
