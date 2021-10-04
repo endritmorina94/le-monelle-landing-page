@@ -39,7 +39,7 @@ header {
             height: 14px;
             cursor: pointer;
             position: relative;
-            bottom: 2px;
+            bottom: 3px;
 
             div {
                 position: relative;
@@ -48,7 +48,6 @@ header {
                 background-color: #000000;
                 margin-bottom: 2.5px;
                 transition: 0.3s ease transform, 0.3s ease top, 0.3s ease width, 0.3s ease right;
-                border-radius: 2px;
 
                 &:first-child {
                     transform-origin: 0;
