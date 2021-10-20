@@ -85,10 +85,9 @@ header nav.top-nav {
   display: flex;
   align-items: center;
   margin: 0;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
   width: 100%;
   transition: all 1.2s;
   transition-delay: 0.2s;
