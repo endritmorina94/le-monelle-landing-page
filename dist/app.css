@@ -7,6 +7,7 @@ body {
   font-size: 16px;
   color: #343434;
   overflow-x: hidden;
+  width: 100vw;
 }
 
 a {
