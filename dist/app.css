@@ -376,6 +376,7 @@ header .cta p {
 .season-banners .secondary-banners {
   padding-top: 10px;
   padding-bottom: 10px;
+  overflow: hidden;
 }
 .season-banners .secondary-banners .left-banner-container, .season-banners .secondary-banners .right-banner-container {
   padding: 0 5px;
